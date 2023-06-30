@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LABORATORIO14C.Views.CourseList">
+    <StackLayout>
+        <Entry Placeholder="Enter Name" x:Name="txtName" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Enter LastName" x:Name="txtDescription" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Clicked="Button_Clicked"/>
+            <Button Text="Show" Clicked="Button_Clicked_1"/>
+
+        </StackLayout>
+        <Entry Placeholder="Filter" x:Name="txtFilter" HorizontalOptions="FillAndExpand"/>
+        <Button Text="ShowByText" Clicked="Button_Clicked_2"/>
+
+        <ListView x:Name="lvCourses">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}"></Label>
+                            <Label Text="{Binding Description}"></Label>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
